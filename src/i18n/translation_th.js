@@ -5,7 +5,7 @@ const th = {
     party2_name: "พรรคหมายเลข 2 – พรรคเพื่อนสนิท",
     detail: "*คลิกที่ชื่อพรรคเพื่อดูรายละเอียดแต่ละพรรค*"
   },
-  party_1: {
+  party1: {
     header: "พรรคหมายเลข 1 – พรรค One Forward",
     title: "พรรคหมายเลข 1 – พรรค One Forward",
     paragraph_1st:
@@ -17,7 +17,7 @@ const th = {
     instragram: "Instragram : @OneForward.official",
     twitter: "Twitter : @OneForward_1"
   },
-  party_2: {
+  party2: {
     header: "พรรคหมายเลข 2 - พรรคเพื่อนสนิท",
     title: "พรรคหมายเลข 2 - พรรคเพื่อนสนิท",
     paragraph_1st:
