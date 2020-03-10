@@ -1,9 +1,15 @@
-import breakpoints from "styled-components-breakpoint"
-
 const theme = {
   colors: {
-    background_1: `linear-gradient(to top, #e3ab51 , #192c66);`,
-    background_2: `linear-gradient(to top, #c14415 , #2d5251);`
+    party1: {
+      primary: "#e3ab51",
+      secondary: "#192c66",
+      background: "linear-gradient(to bottom, #e3ab51 , #192c66);"
+    },
+    party2: {
+      primary: "#c14415",
+      secondary: "#2d5251",
+      background: "linear-gradient(to bottom, #c14415 , #2d5251);"
+    }
   },
   breakpoints: {
     xs: 0,
