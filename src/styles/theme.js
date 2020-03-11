@@ -6,7 +6,7 @@ const theme = {
       background: "linear-gradient(to bottom, #e3ab51 , #192c66);"
     },
     party2: {
-      primary: "#c14415",
+      primary: "#ffffff",
       secondary: "#2d5251",
       background: "linear-gradient(to bottom, #c14415 , #2d5251);"
     }
