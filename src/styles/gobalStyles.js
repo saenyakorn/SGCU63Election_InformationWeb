@@ -84,19 +84,16 @@ const GlobalStyle = createGlobalStyle`
     max-height: 100%;
   }
 
-  body {
-    font-family: CHULALONGKORN;
-    font-weight: normal;
-    font-size: 16px;
-    @media screen and (min-width: 992px) {
-        font-size: 24px;
-    }
-  }
-
   * {
       margin:0;
       padding:0;
       box-sizing: border-box;
+      font-family: CHULALONGKORN;
+      font-weight: normal;
+      font-size: 16px;
+      @media screen and (min-width: 992px) {
+        font-size: 24px;
+    }
   }
 `
 
