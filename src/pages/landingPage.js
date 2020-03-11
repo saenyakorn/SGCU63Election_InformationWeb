@@ -20,6 +20,9 @@ const PageContainer = styled.div`
 const PageBackground = styled.div`
   min-height: 100vh;
   background: #efe7ee;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 `
 
 const LogoContainer = styled.div`
@@ -60,6 +63,7 @@ const Detail = styled.div`
 const Footer = styled.div`
   width: 100vw;
   margin-top: 1em;
+  margin-top: auto;
 `
 
 export default function LandingPage() {

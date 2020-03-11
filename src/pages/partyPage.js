@@ -5,9 +5,13 @@ import { useTranslation } from "react-i18next"
 
 // STYLED COMPONENTS
 const PageBackground = styled.div`
+  position: relative;
+  min-height: 100vh;
   background: ${({ background }) => background || "#ffffff"};
   padding-top: 1em;
   color: #ffffff;
+  display: flex;
+  flex-direction: column;
 `
 
 const PageContainer = styled.div`
@@ -28,6 +32,9 @@ const Header = styled.h6`
   background: ${({ background }) => background || "#ffffff"};
   color: ${({ color }) => color || "#ffffff"};
   text-decoration: underline;
+`
+const Button = styled(Header)`
+  margin-top: auto;
   & > * {
     color: ${({ color }) => color || "#ffffff"};
   }
@@ -88,9 +95,9 @@ export default function PartyPage({ party }) {
         </ParagraphCantainer>
       </PageContainer>
 
-      <Header background={themeContext.colors[party].secondary} color={themeContext.colors[party].primary}>
+      <Button background={themeContext.colors[party].secondary} color={themeContext.colors[party].primary}>
         <Link to="/">BACK</Link>
-      </Header>
+      </Button>
     </PageBackground>
   )
 }
