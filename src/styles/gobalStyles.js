@@ -88,6 +88,9 @@ const GlobalStyle = createGlobalStyle`
     font-family: CHULALONGKORN;
     font-weight: normal;
     font-size: 16px;
+    @media screen and (max-width: 992px) {
+        font-size: 24px;
+    }
   }
 
   * {
