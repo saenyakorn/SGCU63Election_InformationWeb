@@ -8,6 +8,7 @@ import footer from "../images/footer.png"
 import Logo_party1 from "../images/Logo_party1.png"
 import Logo_party2 from "../images/Logo_party2.png"
 
+// STYLED COMPONENTS
 const PageContainer = styled.div`
   width: 85vw;
   margin: 0 auto;

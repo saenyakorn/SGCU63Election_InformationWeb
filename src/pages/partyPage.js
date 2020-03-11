@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import styled, { ThemeContext } from "styled-components"
 import { useTranslation } from "react-i18next"
 
+// STYLED COMPONENTS
 const PageBackground = styled.div`
   background: ${({ background }) => background || "#ffffff"};
   padding-top: 1em;
