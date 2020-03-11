@@ -9,7 +9,6 @@ import Logo_party1 from "../images/Logo_party1.png"
 import Logo_party2 from "../images/Logo_party2.png"
 
 const PageContainer = styled.div`
-  min-height: 100vh;
   width: 85vw;
   margin: 0 auto;
   display: flex;
@@ -18,6 +17,7 @@ const PageContainer = styled.div`
 `
 
 const PageBackground = styled.div`
+  min-height: 100vh;
   background: #efe7ee;
 `
 
@@ -58,6 +58,7 @@ const Detail = styled.div`
 
 const Footer = styled.div`
   width: 100vw;
+  margin-top: 1em;
 `
 
 export default function LandingPage() {
