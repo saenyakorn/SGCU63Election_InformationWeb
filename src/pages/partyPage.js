@@ -61,14 +61,23 @@ const Title = styled.div`
 
 const Paragraph = styled.div`
   font-family: "TH Sarabun New";
-  font-size: 0.8em;
+  font-size: 0.9em;
   margin: 1em 0;
 `
 
 const Contact = styled.div`
   font-family: "TH Sarabun New";
-  font-size: 0.8em;
+  font-size: 0.9em;
   margin: 1em 0;
+`
+
+const ContactLink = styled.div`
+  font-family: "TH Sarabun New";
+  font-size: 0.9em;
+  color: white;
+  & > * {
+    color: white;
+  }
 `
 
 export default function PartyPage({ party }) {
@@ -88,9 +97,23 @@ export default function PartyPage({ party }) {
           <Title>{t(`${party}.title`)}</Title>
           <Paragraph>&nbsp;&nbsp;&nbsp;{t(`${party}.paragraph_1st`)}</Paragraph>
           <Paragraph>&nbsp;&nbsp;&nbsp;{t(`${party}.paragraph_2nd`)}</Paragraph>
-          {party == "party2" ? <Paragraph>&nbsp;&nbsp;&nbsp;{t(`${party}.paragraph_3rd`)}</Paragraph> : ""}
+          {party === "party2" ? <Paragraph>&nbsp;&nbsp;&nbsp;{t(`${party}.paragraph_3rd`)}</Paragraph> : ""}
           <Contact>{t(`${party}.facebook`)}</Contact>
+          {party === "party2" ? (
+            <ContactLink>
+              <a href={"https://" + t(`${party}.facebookLink`)}>{t(`${party}.facebookLink`)}</a>
+            </ContactLink>
+          ) : (
+            ""
+          )}
           <Contact>{t(`${party}.instragram`)}</Contact>
+          {party === "party2" ? (
+            <ContactLink>
+              <a href={"https://" + t(`${party}.instragramLink`)}>{t(`${party}.instragramLink`)}</a>
+            </ContactLink>
+          ) : (
+            ""
+          )}
           <Contact>{t(`${party}.twitter`)}</Contact>
         </ParagraphCantainer>
       </PageContainer>
