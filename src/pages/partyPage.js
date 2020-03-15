@@ -10,6 +10,7 @@ const PageBackground = styled.div`
   background: ${({ background }) => background || "#ffffff"};
   color: #ffffff;
   display: flex;
+  align-items: flex-start;
   flex-direction: column;
 `
 
@@ -36,6 +37,15 @@ const Header = styled.h6`
 const Button = styled(Header)`
   text-align: ${({ textAlign }) => textAlign || "center"};
   margin-top: ${({ marginTop }) => marginTop || "auto"};
+  & > * {
+    color: ${({ color }) => color || "#ffffff"};
+  }
+`
+
+const ButtonBack = styled(Header)`
+  text-align: left;
+  margin-top: 0;
+  background: #f18ea2;
   & > * {
     color: ${({ color }) => color || "#ffffff"};
   }
@@ -87,9 +97,9 @@ export default function PartyPage({ party }) {
 
   return (
     <PageBackground background={themeContext.colors[party].background}>
-      <Button background={"#f18ea2"} color={"white"} marginTop={0} textAlign="left">
+      <ButtonBack color={"white"}>
         <Link to="/">Back</Link>
-      </Button>
+      </ButtonBack>
       <Header background={themeContext.colors[party].secondary} color={themeContext.colors[party].primary}>
         {t(`${party}.header`)}
       </Header>
