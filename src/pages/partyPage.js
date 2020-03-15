@@ -8,9 +8,9 @@ const PageBackground = styled.div`
   position: relative;
   min-height: 100vh;
   background: ${({ background }) => background || "#ffffff"};
-  padding-top: 1em;
   color: #ffffff;
   display: flex;
+  align-items: flex-start;
   flex-direction: column;
 `
 
@@ -29,12 +29,23 @@ const Header = styled.h6`
   font-size: 1.2em;
   text-align: center;
   padding: 0.5em 1em;
+  margin-top: 1em;
   background: ${({ background }) => background || "#ffffff"};
   color: ${({ color }) => color || "#ffffff"};
   text-decoration: underline;
 `
 const Button = styled(Header)`
-  margin-top: auto;
+  text-align: ${({ textAlign }) => textAlign || "center"};
+  margin-top: ${({ marginTop }) => marginTop || "auto"};
+  & > * {
+    color: ${({ color }) => color || "#ffffff"};
+  }
+`
+
+const ButtonBack = styled(Header)`
+  text-align: left;
+  margin-top: 0;
+  background: #f18ea2;
   & > * {
     color: ${({ color }) => color || "#ffffff"};
   }
@@ -61,14 +72,23 @@ const Title = styled.div`
 
 const Paragraph = styled.div`
   font-family: "TH Sarabun New";
-  font-size: 0.8em;
+  font-size: 0.9em;
   margin: 1em 0;
 `
 
 const Contact = styled.div`
   font-family: "TH Sarabun New";
-  font-size: 0.8em;
+  font-size: 0.9em;
   margin: 1em 0;
+`
+
+const ContactLink = styled.div`
+  font-family: "TH Sarabun New";
+  font-size: 0.9em;
+  color: white;
+  & > * {
+    color: white;
+  }
 `
 
 export default function PartyPage({ party }) {
@@ -77,6 +97,9 @@ export default function PartyPage({ party }) {
 
   return (
     <PageBackground background={themeContext.colors[party].background}>
+      <ButtonBack color={"white"}>
+        <Link to="/">Back</Link>
+      </ButtonBack>
       <Header background={themeContext.colors[party].secondary} color={themeContext.colors[party].primary}>
         {t(`${party}.header`)}
       </Header>
@@ -88,15 +111,29 @@ export default function PartyPage({ party }) {
           <Title>{t(`${party}.title`)}</Title>
           <Paragraph>&nbsp;&nbsp;&nbsp;{t(`${party}.paragraph_1st`)}</Paragraph>
           <Paragraph>&nbsp;&nbsp;&nbsp;{t(`${party}.paragraph_2nd`)}</Paragraph>
-          {party == "party2" ? <Paragraph>&nbsp;&nbsp;&nbsp;{t(`${party}.paragraph_3rd`)}</Paragraph> : ""}
+          {party === "party2" ? <Paragraph>&nbsp;&nbsp;&nbsp;{t(`${party}.paragraph_3rd`)}</Paragraph> : ""}
           <Contact>{t(`${party}.facebook`)}</Contact>
+          {party === "party2" ? (
+            <ContactLink>
+              <a href={t(`${party}.facebookLink`)}>{t(`${party}.facebookLink`)}</a>
+            </ContactLink>
+          ) : (
+            ""
+          )}
           <Contact>{t(`${party}.instragram`)}</Contact>
+          {party === "party2" ? (
+            <ContactLink>
+              <a href={t(`${party}.instragramLink`)}>{t(`${party}.instragramLink`)}</a>
+            </ContactLink>
+          ) : (
+            ""
+          )}
           <Contact>{t(`${party}.twitter`)}</Contact>
         </ParagraphCantainer>
       </PageContainer>
 
-      <Button background={themeContext.colors[party].secondary} color={themeContext.colors[party].primary}>
-        <Link to="/">BACK</Link>
+      <Button background={"#f18ea2"} color={"white"}>
+        <a href={t(`${party}.facebookLink`)}>{t(`${party}.facebook`)}</a>
       </Button>
     </PageBackground>
   )

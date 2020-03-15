@@ -3,8 +3,10 @@ import ReactDOM from "react-dom"
 import App from "./App"
 import * as serviceWorker from "./serviceWorker"
 
+// GLOBAL STYLES
+import "./index.css"
+
 // THEME and STYLES
-import GlobalStyles from "./styles/gobalStyles"
 import theme from "./styles/theme"
 import { ThemeProvider } from "styled-components"
 
@@ -14,7 +16,6 @@ import "./i18n"
 const Component = () => {
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyles />
       <App />
     </ThemeProvider>
   )
