@@ -14,9 +14,9 @@ const th = {
       "24 มีนาคมนี้ เข้าคูหากาเบอร์ 1 ยกพรรค มาก้าวไปด้วยกัน เพื่อวันที่ดีกว่ากับพวกเรา One Forward ติดตามข่าวสาร นโยบาย และรู้จักกับพวกเรามากขึ้น ผ่าน",
     paragraph_3rd: "",
     facebook: "Facebook Page : One Forward เพื่อวันข้างหน้าที่ดีกว่า",
-    facebookLink: "",
+    facebookLink: "https://www.facebook.com/OneForward.Official/",
     instragram: "Instragram : @OneForward.official",
-    instragramLink: "",
+    instragramLink: "https://www.instagram.com/oneforward.official/",
     twitter: "Twitter : @OneForward_1"
   },
   party2: {
@@ -28,9 +28,9 @@ const th = {
       "    💚🧡Improving academic activities Developing student’s potential to the fullest Adjusting student welfare to match student’s needs💚🧡",
     paragraph_3rd: "สามารถติดตามพวกเรา “พรรคเพื่อนสนิท” เพิ่มเติมได้ที่",
     facebook: "Facebook : พรรคเพื่อนสนิท - Best Friends party",
-    facebookLink: "www.facebook.com/BestFriendsParty",
+    facebookLink: "https://www.facebook.com/BestFriendsParty",
     instragram: "Instagram : bestfriends.party2",
-    instragramLink: "www.instagram.com/bestfriends.party2",
+    instragramLink: "https://www.instagram.com/bestfriends.party2",
     twitter: ""
   }
 }
