@@ -8,7 +8,6 @@ const PageBackground = styled.div`
   position: relative;
   min-height: 100vh;
   background: ${({ background }) => background || "#ffffff"};
-  padding-top: 1em;
   color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -29,12 +28,14 @@ const Header = styled.h6`
   font-size: 1.2em;
   text-align: center;
   padding: 0.5em 1em;
+  margin-top: 1em;
   background: ${({ background }) => background || "#ffffff"};
   color: ${({ color }) => color || "#ffffff"};
   text-decoration: underline;
 `
 const Button = styled(Header)`
-  margin-top: auto;
+  text-align: ${({ textAlign }) => textAlign || "center"};
+  margin-top: ${({ marginTop }) => marginTop || "auto"};
   & > * {
     color: ${({ color }) => color || "#ffffff"};
   }
@@ -86,6 +87,9 @@ export default function PartyPage({ party }) {
 
   return (
     <PageBackground background={themeContext.colors[party].background}>
+      <Button background={"#f18ea2"} color={"white"} marginTop={0} textAlign="left">
+        <Link to="/">Back</Link>
+      </Button>
       <Header background={themeContext.colors[party].secondary} color={themeContext.colors[party].primary}>
         {t(`${party}.header`)}
       </Header>
@@ -101,7 +105,7 @@ export default function PartyPage({ party }) {
           <Contact>{t(`${party}.facebook`)}</Contact>
           {party === "party2" ? (
             <ContactLink>
-              <a href={"https://" + t(`${party}.facebookLink`)}>{t(`${party}.facebookLink`)}</a>
+              <a href={t(`${party}.facebookLink`)}>{t(`${party}.facebookLink`)}</a>
             </ContactLink>
           ) : (
             ""
@@ -109,7 +113,7 @@ export default function PartyPage({ party }) {
           <Contact>{t(`${party}.instragram`)}</Contact>
           {party === "party2" ? (
             <ContactLink>
-              <a href={"https://" + t(`${party}.instragramLink`)}>{t(`${party}.instragramLink`)}</a>
+              <a href={t(`${party}.instragramLink`)}>{t(`${party}.instragramLink`)}</a>
             </ContactLink>
           ) : (
             ""
@@ -118,8 +122,8 @@ export default function PartyPage({ party }) {
         </ParagraphCantainer>
       </PageContainer>
 
-      <Button background={themeContext.colors[party].secondary} color={themeContext.colors[party].primary}>
-        <Link to="/">BACK</Link>
+      <Button background={"#f18ea2"} color={"white"}>
+        <a href={t(`${party}.facebookLink`)}>{t(`${party}.facebook`)}</a>
       </Button>
     </PageBackground>
   )
