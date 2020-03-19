@@ -26,8 +26,8 @@ const PageBackground = styled.div`
 `
 
 const LogoContainer = styled.div`
-  height: 120px;
-  width: 120px;
+  height: 150px;
+  width: 150px;
 `
 
 const Header = styled.div`
