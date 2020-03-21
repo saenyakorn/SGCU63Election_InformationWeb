@@ -13,9 +13,8 @@ const PageBackground = styled.div`
   align-items: flex-start;
   flex-direction: column;
 `
-
 const PageContainer = styled.div`
-  width: 85vw;
+  width: 90vw;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -57,9 +56,10 @@ const LogoContainer = styled.div`
   margin: 2em 0;
 `
 
-const ParagraphCantainer = styled.div`
+const ParagraphContainer = styled.div`
   padding: 1em;
   border: 1px solid white;
+  display: grid
 `
 
 const Title = styled.div`
@@ -73,7 +73,20 @@ const Title = styled.div`
 const Paragraph = styled.div`
   font-family: "TH Sarabun New";
   font-size: 0.9em;
-  margin: 1em 0;
+  margin: auto;
+  margin-bottom: 0.5em;
+`
+
+const Paragraph2 = styled.div`
+  font-family: "TH Sarabun New";
+  font-size: 0.8em;
+  margin: auto;
+  margin-bottom: 1em;
+`
+
+const Subparagraph = styled.div`
+  font-family: "TH Sarabun New";
+  font-size: 0.9em;
 `
 
 const Contact = styled.div`
@@ -90,7 +103,6 @@ const ContactLink = styled.div`
     color: white;
   }
 `
-
 export default function PartyPage({ party }) {
   const { t } = useTranslation()
   const themeContext = React.useContext(ThemeContext)
@@ -107,11 +119,23 @@ export default function PartyPage({ party }) {
         <LogoContainer>
           <img alt="" src={require(`../images/Logo_${party}.png`)} />
         </LogoContainer>
-        <ParagraphCantainer>
+        <ParagraphContainer>
           <Title>{t(`${party}.title`)}</Title>
-          <Paragraph>&nbsp;&nbsp;&nbsp;{t(`${party}.paragraph_1st`)}</Paragraph>
-          <Paragraph>&nbsp;&nbsp;&nbsp;{t(`${party}.paragraph_2nd`)}</Paragraph>
-          {party === "party2" ? <Paragraph>&nbsp;&nbsp;&nbsp;{t(`${party}.paragraph_3rd`)}</Paragraph> : ""}
+          {/* <Paragraph>&nbsp;&nbsp;&nbsp;{t(`${party}.paragraph_1st`)}</Paragraph> */}
+
+          {party === "party2" ? <Paragraph>{t(`${party}.paragraph_1st`).split("\n").map((i, key) => {
+            return <Subparagraph key={key}> {i} </Subparagraph>; }) } </Paragraph> 
+            : <Paragraph>&nbsp;&nbsp;&nbsp;{t(`${party}.paragraph_1st`)}</Paragraph>}
+
+          {/* <Paragraph>&nbsp;&nbsp;&nbsp;{t(`${party}.paragraph_2nd`)}</Paragraph> */}
+
+          {party === "party2" ? <Paragraph2>{t(`${party}.paragraph_2nd`).split("\n").map((i, key) => {
+            return <Subparagraph key={key}> {i} </Subparagraph>; }) } </Paragraph2>
+            : <Paragraph>&nbsp;&nbsp;&nbsp;{t(`${party}.paragraph_2nd`)}</Paragraph>}
+          
+          {/* {party === "party2" ? <Contact>{t(`${party}.paragraph_3rd`)}</Contact> : ""} */}
+          <Contact>{t(`${party}.paragraph_3rd`)}</Contact> 
+
           <Contact>{t(`${party}.facebook`)}</Contact>
           {party === "party2" ? (
             <ContactLink>
@@ -129,7 +153,7 @@ export default function PartyPage({ party }) {
             ""
           )}
           <Contact>{t(`${party}.twitter`)}</Contact>
-        </ParagraphCantainer>
+        </ParagraphContainer>
       </PageContainer>
 
       <Button background={"#f18ea2"} color={"white"}>
